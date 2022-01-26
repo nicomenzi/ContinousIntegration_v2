@@ -32,5 +32,21 @@ public class SaveCalculatorTest {
         int value2 = -20;
         assertTrue(testee.summe(value1, value2) == -30);
     }
+    @Test (expected = ArithmeticException.class)
+    public void testsummeEineRandzahlIsOK() {
+        int value1 = 1;
+        int value2 = Integer.MAX_VALUE;
+        assertTrue(testee.summe(value1, value2) != 0);
+    }
+    @Test (expected = ArithmeticException.class)
+    public void testsummeEineminusRandzahlIsOK() {
+        int value1 = -1;
+        int value2 = Integer.MIN_VALUE;
+        assertTrue(testee.summe(value1, value2) != 0);
+    }
+
+
+
+
 
 }

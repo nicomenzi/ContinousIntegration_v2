@@ -5,8 +5,8 @@ package ch.bbw.nm.savecalculator;
  * Rechnet 'vorsichtig' mit Zahlen.
  * Warnt, wenn etwas nicht geht.
  *   
- * @author Peter Rutschmann
- * @version 0.0.1
+ * @author Nico Menzi
+ * @version 1.0.0
  */
 public class SaveCalculator {
 	public int summe(int summand1, int summand2) throws ArithmeticException
@@ -42,7 +42,7 @@ public class SaveCalculator {
 		return dividend1 / dividend2;
 	}
 
-	public double multiplication(int multiplikator1, int multiplikator2) throws ArithmeticException
+	private double multiplication(int multiplikator1, int multiplikator2) throws ArithmeticException
 	{
 		long value = (long) multiplikator1 * (long) multiplikator2;
 		if ((value > Integer.MAX_VALUE) || (value < Integer.MIN_VALUE)) {
@@ -51,7 +51,5 @@ public class SaveCalculator {
 		return multiplikator1 * multiplikator2;
 
 	}
-	//pow
-	//sqrt
-	//...
+
 }
