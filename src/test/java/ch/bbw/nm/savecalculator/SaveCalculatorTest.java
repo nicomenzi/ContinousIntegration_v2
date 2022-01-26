@@ -172,6 +172,19 @@ public class SaveCalculatorTest {
         assertFalse(testee.division(dividend1, dividend2) == 0);
     }
 
+    @Test
+    public void testsumme_protectedZweiPositiveIsOk(){
+        int value1 = 10;
+        int value2 = 20;
+        assertTrue(testee.summe_protected(value1, value2) == 30);
+    }
+
+    @Test
+    public void testsumme_packageZweiPositiveIsOk(){
+        int value1 = 10;
+        int value2 = 20;
+        assertTrue(testee.summe_package(value1, value2) == 30);
+    }
 
 
 
