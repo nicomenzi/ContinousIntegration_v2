@@ -143,15 +143,33 @@ public class SaveCalculatorTest {
     }
     @Test
     public void testdivisionZweiNegativeIsOk() {
-        int dividend1 = 10;
+        int dividend1 = -10;
         int dividend2 = -2;
         assertTrue(testee.division(dividend1, dividend2) == 5);
     }
-    @Test
+    @Test (expected = AssertionError.class)
     public void testdivisionEineRandzahlIsOK() {
         int dividend1 = 10;
-        int dividend2 = -2;
-        assertTrue(testee.division(dividend1, dividend2) == 5);
+        int dividend2 = Integer.MAX_VALUE;
+        assertFalse(testee.division(dividend1, dividend2) == 0);
+    }
+    @Test (expected = AssertionError.class)
+    public void testdivisionEineMinusRandzahlIsOK() {
+        int dividend1 = 10;
+        int dividend2 = Integer.MIN_VALUE;
+        assertFalse(testee.division(dividend1, dividend2) == 0);
+    }
+    @Test (expected = ArithmeticException.class)
+    public void testdivisionNullundNegativeZahl() {
+        int dividend1 = 0;
+        int dividend2 = 2;
+        assertFalse(testee.division(dividend1, dividend2) == 0);
+    }
+    @Test (expected = ArithmeticException.class)
+    public void testdivisionNullPlusZahl() {
+        int dividend1 = 0;
+        int dividend2 = +2;
+        assertFalse(testee.division(dividend1, dividend2) == 0);
     }
 
 
